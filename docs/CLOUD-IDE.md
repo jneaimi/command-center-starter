@@ -16,7 +16,7 @@ setup) — see the program's published repo.
 
 ## Option B — Gitpod
 
-Open `https://gitpod.io/#<REPO-URL>`. Same steps: install Claude Code in the terminal, sign in, work.
+Open `https://gitpod.io/#https://github.com/jneaimi/command-center-starter.git`. Same steps: install Claude Code in the terminal, sign in, work.
 
 ## Option C — a provided cloud VM / web VS Code
 

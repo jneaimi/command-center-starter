@@ -6,7 +6,7 @@ Requires: git, a recent Node.js, and Claude Code (`npm i -g @anthropic-ai/claude
 active Claude subscription.
 
 ```bash
-git clone <REPO-URL> command-center
+git clone https://github.com/jneaimi/command-center-starter.git command-center
 cd command-center
 claude
 ```

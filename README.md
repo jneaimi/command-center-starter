@@ -32,7 +32,7 @@ docs/
 ## Quick start
 
 ```bash
-git clone <REPO-URL> command-center
+git clone https://github.com/jneaimi/command-center-starter.git command-center
 cd command-center
 claude        # Claude Code loads CLAUDE.md + the .claude/ skills & agent automatically
 ```
