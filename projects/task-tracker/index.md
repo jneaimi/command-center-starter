@@ -12,11 +12,11 @@ A small personal task app — my sandbox for the patterns in `knowledge/`.
 
 ## Decisions
 - [[adr-001-stack-choice]] — SvelteKit + SQLite
-- [[adr-002-auth-sessions-over-jwt]] — server sessions, not JWT
+- [[adr-002-newest-first]] — the newest task sits at the top
 
 ## Work items
-- [[wi-auth-flow]] — sign-in + session
 - [[wi-task-crud]] — create / list / complete tasks
+- [[wi-sync-across-devices]] — one list on every device (version 2)
 
 ## Related knowledge
 - [[../../knowledge/why-sqlite-for-the-tracker|Why SQLite]]
