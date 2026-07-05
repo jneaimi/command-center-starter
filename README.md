@@ -1,54 +1,66 @@
-# Command Center — Starter Repo
+# The Starter Vault — Week 2 · Day 5
 
-The reference implementation of the personal AI command center you build across Weeks 1–2
-of the Full-Stack AI Vibe Coder program — plus a safety net for restoring a vault that did
-not survive between sessions.
+The shared vault every student adopts on the morning of Day 5, so the whole room
+starts from the same known-good ground. This repo root **is** the vault: you clone
+it straight to `~/vault`.
 
-> You learn by **building these by hand** in the labs. This repo is the worked example and
-> the fallback: if your vault breaks, or a skill won't install, copy the matching piece from
-> here and keep moving. The handouts show the *anatomy*; these are the working files.
+## Adopt it (Day 5, 09:00)
+
+```bash
+# 1. archive your Week-1 vault first — nothing is deleted, it is your proof
+mv ~/vault ~/archive/vault-week1
+
+# 2. adopt the shared starter vault
+git clone https://github.com/jneaimi/command-center-starter.git ~/vault
+
+# 3. open it
+code ~/vault
+```
+
+Your clone is yours: every `git commit` you sign stays on your machine.
 
 ## What's inside
 
 ```
-CLAUDE.md                 standing rules (non-sensitive only · frontmatter + naming · no orphans)
-inbox/                    raw capture (in-tray)
-knowledge/                durable memory — example linked notes + index.md (the front door)
-projects/                 active workspace
-templates/                note.md + project.md — the conventions, ready to reuse
-.claude/
-  skills/
-    capture-note/         Day 3 — files a thought with frontmatter + naming (does not link)
-    weekly-review/        Day 5 — reads + SUGGESTS links; never writes (auto)
-    new-project/          Day 5 — scaffolds a project from the template (slash-only, writes)
-  agents/
-    note-researcher.md    Day 6 — read-only worker that answers from your notes, with citations
-docs/
-  INSTALL.md              one-command setup
-  CLOUD-IDE.md            fallback for machines that block local installs
-  FACILITATOR.md          per-day "reinstall X" map + delivery notes
+CLAUDE.md                     the vault rules
+knowledge/                    9 interlinked notes + index.md (the front door)
+projects/CLAUDE.md            zone rules — rules can nest
+projects/task-tracker/        a real project: index + 2 ADRs + 2 work items
+templates/                    one per note type: reference · learning · decision · project
+inbox/                        quick captures (opens for real in Week 4)
+setup/dot-claude/             the ~/.claude side — install it in step 4 below
 ```
 
-## Quick start
+## 4. Stage the `~/.claude` side
 
-```bash
-git clone https://github.com/jneaimi/command-center-starter.git command-center
-cd command-center
-claude        # Claude Code loads CLAUDE.md + the .claude/ skills & agent automatically
+You direct the AI; you check the result. In a Claude session say:
+
+```
+Set up my ~/.claude from ~/vault/setup/dot-claude: copy CLAUDE.md to
+~/.claude/CLAUDE.md, copy hooks/ to ~/.claude/hooks/, and copy
+skills/capture-note only if I don't already have it. Show me what you did.
 ```
 
-Then try the loop:
-- Say *"save this to my vault: I decided to batch my errands on Fridays"* → `capture-note` files it.
-- Review the change with `git diff`, then `git add -A && git commit -m "capture"`.
-- Ask *"based on my notes, how did the budget decision affect the vendor choice?"* → delegate to
-  `note-researcher` and watch it cite `budget-call-decision` and `vendor-shortlist`.
+Then open `~/.claude/CLAUDE.md` yourself and confirm the rules are the ones in
+`setup/dot-claude/CLAUDE.md`. The guard in `hooks/` is a sleeping stub — it gets
+wired up on Day 6.
 
-## A note on the example content
+## 5. Validate the adoption
 
-`knowledge/` ships three linked example notes so the graph and the `note-researcher` work out of
-the box. **Replace them with your own** — they exist only to demonstrate the conventions.
+In a Claude session started inside `~/vault`, say:
+
+```
+Look around this vault and report: how many notes in knowledge/ plus the index,
+what the task-tracker project contains, whether every note has frontmatter
+(title, type, created, tags), and whether any [[link]] points at a note that
+does not exist — skip the field guide, its example links are quotes. Read only,
+change nothing.
+```
+
+Expected: 9 notes + index · task-tracker with 2 ADRs + 2 work items · frontmatter
+everywhere · no dangling links.
 
 ## The rule that never moves
 
-Only ever work with **non-sensitive** content. This is personal-productivity material, never
-classified or sensitive. See `CLAUDE.md`.
+Non-sensitive content only. And the house rule of Week 2: **reads run free,
+writes wait for your review.**

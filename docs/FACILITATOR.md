@@ -1,33 +1,32 @@
 # Facilitator notes
 
-This repo is the answer key + safety net for Weeks 1–2. Participants build each piece by hand;
-hand them the matching piece from here only when a lab would otherwise stall.
+This repo is the published copy of the canonical Day-5 vault
+(source of truth: `~/Documents/uaen-training/canonical-vault/` on the
+trainer machine). If the canonical vault changes, re-sync and push.
 
-## Per-day "reinstall X" map
+## Delivery model (this cohort)
 
-| Day | If a participant is stuck on… | Restore from this repo |
-|-----|-------------------------------|------------------------|
-| D2  | the vault scaffold / lost vault | `inbox/ knowledge/ projects/ templates/` + `CLAUDE.md` (line one) |
-| D3  | the capture skill won't install/fire | `.claude/skills/capture-note/` + `CLAUDE.md` line two (frontmatter + naming) |
-| D5  | the two starter skills | `.claude/skills/weekly-review/` (auto) + `.claude/skills/new-project/` (slash-only) |
-| D6  | the starter agent | `.claude/agents/note-researcher.md` |
+Nothing is pre-staged on student machines. Students drive the whole adoption
+themselves, AI-assisted, from the Day-5 handout:
 
-Each is a copy-paste away (see `INSTALL.md` ▸ "Restore just one piece"). Restoring should take
-under 10 minutes — pair the participant with a neighbour and keep the room moving.
+1. Archive their Week-1 vault (`mv ~/vault ~/archive/vault-week1`).
+2. Clone this repo to `~/vault`.
+3. Direct the AI to install `setup/dot-claude/` into `~/.claude`, then gate it.
+4. Direct the AI to validate the vault (read-only report), then gate it.
 
-## Syntax note — the agent tool list
+## Restore map
 
-The Day-6 handout shows the key-ring as `tools: [Read, Grep, Glob]` to make the concept legible.
-Claude Code reads the same three tools from a comma-separated line: `tools: Read, Grep, Glob`
-(the form in `note-researcher.md`). Same key-ring — read + search, no write/delete/shell.
+| Broke | Copy from |
+|---|---|
+| Whole vault | re-clone this repo to `~/vault` |
+| Global rules | `setup/dot-claude/CLAUDE.md` → `~/.claude/CLAUDE.md` |
+| Week-1 capture skill | `setup/dot-claude/skills/capture-note/` → `~/.claude/skills/` |
+| Day-6 guard stub | `setup/dot-claude/hooks/` → `~/.claude/hooks/` |
 
-## The example notes
+## Continuity
 
-`knowledge/` ships three linked example notes (`budget-call-decision`, `vendor-shortlist`,
-`buying-a-laptop`) so the graph and `note-researcher` demo work immediately. Tell participants to
-replace them with their own — they are scaffolding, not content.
-
-## Non-sensitive only
-
-UAEN is a government entity. Announce the non-sensitive-content rule every session; it is line one
-of `CLAUDE.md` for exactly this reason.
+- Day 5 archives the capture-note skill and replaces it with `my-vault` (3 verbs).
+- Day 6 wires `hooks/vault-write-guard.sh` as a PreToolUse hook (law 1: commits are human).
+- Day 7 adds the doctor; the field guide's example links are the doctor's one skip.
+- Day 8 reveals `projects/task-tracker/` was the capstone brief all along — do not
+  rename or trim it.

@@ -1,14 +1,30 @@
 ---
+title: Knowledge — index
 type: reference
+created: 2026-06-20
 tags: [index, hub]
-created: 2026-07-08
 ---
 
-# Knowledge — index (the front door)
+# Knowledge — index
 
-The hub the AI enters and walks out from. Replace these examples with your own notes.
+The front door. Everything worth finding is linked from here.
 
-## Related
-- [[budget-call-decision]]
-- [[vendor-shortlist]]
-- [[buying-a-laptop]]
+## Start here
+- [[week-1-field-guide]] — the Week 1 reference (concepts, glossary, the two homes)
+
+## Learnings
+- [[react-state-and-effects]]
+- [[git-rebase-vs-merge]]
+- [[debugging-cors]]
+- [[readable-error-messages]]
+
+## References
+- [[sveltekit-server-boundary]]
+- [[api-rate-limiting]]
+- [[env-vars-and-secrets]]
+
+## Decisions
+- [[why-sqlite-for-the-tracker]]
+
+## Projects
+- [[../projects/task-tracker/index|Task Tracker]]

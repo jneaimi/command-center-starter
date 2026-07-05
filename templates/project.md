@@ -1,12 +1,15 @@
 ---
+title:
 type: project
-tags: []
 created:
+tags: [project]
+status: active
 ---
 
-# Project name
+# 
 
-What this project is and its current state.
+## Decisions
 
-## Related
-- [[ ]]
+## Work items
+
+## Related knowledge

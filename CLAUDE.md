@@ -1,10 +1,12 @@
-# Command center — standing rules
+# Vault — rules
 
-Only ever work with non-sensitive content. This is a personal-productivity vault
-(notes, research, planning, drafting) — never classified or sensitive material.
+Standing rules for this vault. Zone folders (e.g. `projects/`) add their own
+CLAUDE.md on top of these.
 
-Every note has frontmatter (`type`, `tags`, `created: YYYY-MM-DD`) and a kebab-case
-filename: short, lowercase, dashes — e.g. `budget-call-decision.md`, not `My Notes (final).md`.
-
-`knowledge/` is curated and durable; `inbox/` is raw scratch. Capturing files a note;
-linking is the human's judgment — every note earns at least one `[[wikilink]]` before it is done.
+1. Non-sensitive content only.
+2. Every note has frontmatter: `title`, `type`, `created` (YYYY-MM-DD), `tags`.
+3. Note types: `reference` · `learning` · `decision` · `project` (+ `adr`,
+   `work-item` inside projects).
+4. Names in kebab-case. One idea per note.
+5. Every note earns at least one link. No orphans, no dangling links.
+6. Keep `knowledge/index.md` current — it is the front door.
