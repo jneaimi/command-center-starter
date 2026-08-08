@@ -7,8 +7,9 @@ it straight to `~/vault`.
 ## Adopt it (Day 5, 09:00)
 
 ```bash
-# 1. archive your Week-1 vault first — nothing is deleted, it is your proof
-mv ~/vault ~/archive/vault-week1
+# 1. promote the Week-1 training site to the archive shelf — nothing is deleted
+mkdir -p ~/archive
+mv ~/day1-save-points ~/archive/vault-week1
 
 # 2. adopt the shared starter vault
 git clone https://github.com/jneaimi/command-center-starter.git ~/vault
@@ -37,13 +38,17 @@ You direct the AI; you check the result. In a Claude session say:
 
 ```
 Set up my ~/.claude from ~/vault/setup/dot-claude: copy CLAUDE.md to
-~/.claude/CLAUDE.md, copy hooks/ to ~/.claude/hooks/, and copy
-skills/capture-note only if I don't already have it. Show me what you did.
+~/.claude/CLAUDE.md and copy hooks/ to ~/.claude/hooks/. Do not touch
+~/.claude/skills — /think stays, and vault tools do not go there. Show me
+what you did.
 ```
 
 Then open `~/.claude/CLAUDE.md` yourself and confirm the rules are the ones in
 `setup/dot-claude/CLAUDE.md`. The guard in `hooks/` is a sleeping stub — it gets
-wired up on Day 6.
+wired up on Day 6. Note what is NOT staged: no skills. Week 1's capture-note was
+a project skill and rides inside `~/archive/vault-week1`; its successor,
+`my-vault`, is built in the Day-5 lab at `~/vault/.claude/skills/` — a vault tool,
+committed on the vault trail.
 
 ## 5. Validate the adoption
 
